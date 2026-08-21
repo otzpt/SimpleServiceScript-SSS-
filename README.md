@@ -19,7 +19,7 @@ of services on linux
 
 - **systemd** *(for now)*
 
-- **python3**
+- **python 3**
 
 ## How to use
 
@@ -30,6 +30,10 @@ git clone https://github.com/otzpt/SimpleServiceScript-SSS-
 ```
 to the folder you want it at, then you are going to cd to the **SSS** folder
 and then execute:
+```bash
+python3 main.py
+```
+or
 ```bash
 python main.py
 ```

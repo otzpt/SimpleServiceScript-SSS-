@@ -51,31 +51,4 @@ def processStatus():
     status = output.stdout.decode().strip()
     print(status)
 
-# improvised main menu and function calling
-# i might make a GUI version of
-# this altough i like how cli looks
-print("[1] activate service")
-print("[2] deactivate service")
-print("[3] restart service")
-print("[4] service status")
-print("[0] exit")
-
-opt = input("option here: ")
-
-if opt == "1":
-    os.system("clear")
-    activateProcess()
-elif opt == "2":
-    os.system("clear")
-    deactivateProcess()
-elif opt == "3":
-    os.system("clear")
-    restartProcess()
-elif opt == "4":
-    os.system("clear")
-    processStatus()
-elif opt == "0":
-    os.system("clear")
-    exit(0)
-else:
-    print("invalid option")
+# main menu was moved to menu.py

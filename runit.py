@@ -10,10 +10,10 @@ def activateProcess():
     # or running if its stoped
     # proceds with start
     if "inactive" in status:
-        subprocess.run(["sv", "start", process])
+        subprocess.run(["sv", "start", service])
         print(f"service {service} started")
     else:
-        print(f"{process} is already running")
+        print(f"{service} is already running")
 
 def deactivateProcess():
     # gets input and gets status of the service/process

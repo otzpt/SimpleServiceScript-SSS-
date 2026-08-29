@@ -1,54 +1,99 @@
-import subprocess
+import sysD as d
+import runit as r
 import os
 
-# IMPORTANT!!
-# ALWAYS TRY TO USE "--user"
-# FOR SERVICE/PROCESS
-# PEOPLE COULD HAVE MULTIPLE USERS
-# PLUS IS BETTER UX AND GOOD USE OF FREE WILL
+while True:
+    print("="*32)
+    print("SimpleServiceScript-SSS-".center(32))
+    print("="*32)
+    print("What are you using?".center(32))
+    print("="*32)
+    print(" [1] runit")
+    print(" [2] systemD")
+    print(" [0] exit")
+    print("="*32)
 
-def activateProcess():
-    process = input("insert here the service/process name you want to activate: ")
-    output = subprocess.run(["systemctl", "--user", "status", process], capture_output=True)
-    status = output.stdout.decode().strip()
+    option = input("choose one of the options above: ")
 
-    # see if service is stoped
-    # or running if its stoped
-    # proceds with start
-    if "inactive" in status:
-        subprocess.run(["systemctl", "--user", "start", process])
-        print(f"service/process {process} started")
+    if option == "1":
+        while True:
+            os.system("clear")
+            # this took like 5 min to make
+            # cause idk how to copy
+            # paste on neovim
+        
+            print("="*32)
+            print("runit".center(32))
+            print("="*32)
+            print("[1] start service".center(32))
+            print("[2] stop service".center(32))
+            print("[3] restart service".center(32))
+            print("[4] service status".center(32))
+            print("[0] exit".center(32))
+            print("="*32)
+            # ts is taking way to long to do
+            option = input("choose one of the options above: ")
+
+            if option == "1":
+                os.system("clear")
+                r.activateProcessR()
+            elif option == "2":
+                os.system("clear")
+                r.deactivateProcessR()
+            elif option == "3":
+                os.system("clear")
+                r.restartProcessR()
+            elif option == "4":
+                os.system("clear")
+                r.processStatusR()
+            elif option == "0":
+                os.system("clear")
+                break
+            else:
+                os.system("clear")
+                print("invalid option")
+
+    elif option == "2":
+        while True:
+            os.system("clear")
+
+            print("="*32)
+            print("SystemD".center(32))
+            print("="*32)
+            print(" [1] start service")
+            print(" [2] stop service")
+            print(" [3] restart service")
+            print(" [4] service status")
+            print(" [0] exit")
+            print("="*32)
+
+            option = input("choose one of the options above: ")
+
+            if option == "1":
+                os.system("clear")
+                d.activateProcess()
+            elif option == "2":
+                os.system("clear")
+                d.deactivateProcess()
+            elif option == "3":
+                os.system("clear")
+                d.restartProcess()
+            elif option == "4":
+                os.system("clear")
+                d.processStatus()
+            elif option == "0":
+                os.system("clear")
+                break
+            else:
+                os.sytem("clear")
+                print("invalid option")
+    elif option == "0":
+        os.system("clear")
+        exit(0)
     else:
-        print(f"{process} is already running")
+        print("invalid option")
 
-def deactivateProcess():
-    # gets input and gets status of the service/process
-    process = input("insert the name of the service/process you want to deactivate: ")
-    output = subprocess.run(["systemctl", "--user", "status", process], capture_output=True)
-    status = output.stdout.decode().strip()
-    
-    # checks if process is already stoped
-    # if not stops the service/process
-    # idk what to call it
-    if "active" in status:
-        subprocess.run(["systemctl", "--user", "stop", process])
-        print(f"deactivated {process}")
-    else:
-        print(f"{process} is not running")
 
-def restartProcess():
-    process = input("name of process/service: ")
-    # restarts the process with systemclt
-    output = subprocess.run(["systemctl", "--user", "restart", process])
-    
-    print("service/process restarted")
 
-def processStatus():
-    # asks user for the process they want
-    # to get status from
-    process = input("name of process/service: ")
-    output = subprocess.run(["systemctl", "--user", "status", process], capture_output=True)# gets status using systemclt
-    status = output.stdout.decode().strip()
-    print(status)
 
-# main menu was moved to menu.py
+

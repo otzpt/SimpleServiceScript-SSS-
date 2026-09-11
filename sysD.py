@@ -1,5 +1,4 @@
 import subprocess
-import os
 
 # IMPORTANT!!
 # ALWAYS TRY TO USE "--user"
@@ -9,13 +8,13 @@ import os
 
 def activateProcess():
     process = input("insert here the service/process name you want to activate: ")
-    output = subprocess.run(["systemctl", "--user", "status", process], capture_output=True)
+    output = subprocess.run(["systemctl", "--user", "is-active", process], capture_output=True)
     status = output.stdout.decode().strip()
 
     # see if service is stoped
     # or running if its stoped
     # proceds with start
-    if "inactive" in status:
+    if status == "inactive":
         subprocess.run(["systemctl", "--user", "start", process])
         print(f"service/process {process} started")
     else:
@@ -24,13 +23,13 @@ def activateProcess():
 def deactivateProcess():
     # gets input and gets status of the service/process
     process = input("insert the name of the service/process you want to deactivate: ")
-    output = subprocess.run(["systemctl", "--user", "status", process], capture_output=True)
+    output = subprocess.run(["systemctl", "--user", "is-active", process], capture_output=True)
     status = output.stdout.decode().strip()
-    
+
     # checks if process is already stoped
     # if not stops the service/process
     # idk what to call it
-    if "active" in status:
+    if status == "active":
         subprocess.run(["systemctl", "--user", "stop", process])
         print(f"deactivated {process}")
     else:
@@ -40,7 +39,7 @@ def restartProcess():
     process = input("name of process/service: ")
     # restarts the process with systemclt
     output = subprocess.run(["systemctl", "--user", "restart", process])
-    
+
     print("service/process restarted")
 
 def processStatus():

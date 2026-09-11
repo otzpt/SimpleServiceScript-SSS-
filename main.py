@@ -21,7 +21,7 @@ while True:
             # this took like 5 min to make
             # cause idk how to copy
             # paste on neovim
-        
+
             print("="*32)
             print("runit".center(32))
             print("="*32)
@@ -85,15 +85,10 @@ while True:
                 os.system("clear")
                 break
             else:
-                os.sytem("clear")
+                os.system("clear")
                 print("invalid option")
     elif option == "0":
         os.system("clear")
         exit(0)
     else:
         print("invalid option")
-
-
-
-
-

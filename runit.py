@@ -1,5 +1,4 @@
 import subprocess
-import os
 
 def activateProcessR():
     service = input("insert the service you want to start: ")
@@ -20,7 +19,7 @@ def deactivateProcessR():
     service = input("insert the name of the service/process you want to deactivate: ")
     output = subprocess.run(["sv", "status", service], capture_output=True)
     status = output.stdout.decode().strip()
-    
+
     # checks if process is already stoped
     # if not stops the service/process
     # idk what to call it
@@ -34,7 +33,7 @@ def restartProcessR():
     service = input("name of service: ")
     # restarts the process with systemclt
     output = subprocess.run(["sv", "restart", service])
-    
+
     print("service/process restarted")
 
 def processStatusR():

@@ -17,7 +17,7 @@ of services on linux
 
 - **Linux**
 
-- **systemd** *(for now)*
+- **systemd** or **runit**
 
 - **python 3**
 
@@ -37,4 +37,4 @@ or
 ```bash
 python main.py
 ```
-### MAKE SURE YOU HAVE A DISTRO THAT USES SYSTEMD
+### MAKE SURE YOU HAVE A DISTRO THAT USES SYSTEMD OR RUNIT

@@ -1,6 +1,15 @@
 import subprocess
 import time
 
+def status(service):
+    output = subprocess.run(["sc", "query", service], capture_output = True, text = True).stdout
+    if "RUNNING" in output:
+        return 0
+    elif "STOPPED" in output:
+        return 1
+    else:
+        return 2
+
 def activateProcess():
     service = input("What is the service you want to start: ")
     output = subprocess.run(["sc", "query", service], capture_output = True, text = True)
@@ -72,6 +81,3 @@ def serviceRestart():
         if "RUNNING" in status:
             print("service failed to stop")
         print("if you wanted the service to start use start in menu options \n (restart return's service to state that it was before restart)")
-
-
-print("if you wanted the service to start use start in menu options \n (restart return's service to state that it was before restart)")

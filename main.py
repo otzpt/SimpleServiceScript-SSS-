@@ -1,5 +1,6 @@
 import sysD as d
 import runit as r
+import win as w
 import os
 
 while True:
@@ -10,6 +11,7 @@ while True:
     print("="*32)
     print(" [1] runit")
     print(" [2] systemD")
+    print(" [3] windows")
     print(" [0] exit")
     print("="*32)
 
@@ -81,6 +83,41 @@ while True:
             elif option == "4":
                 os.system("clear")
                 d.processStatus()
+            elif option == "0":
+                os.system("clear")
+                break
+            else:
+                os.system("clear")
+                print("invalid option")
+
+    elif option == "3":
+        while True:
+            os.system("clear")
+
+            print("="*32)
+            print("windows".center(32))
+            print("="*32)
+            print(" [1] start service")
+            print(" [2] stop service")
+            print(" [3] restart service")
+            print(" [4] service status")
+            print(" [0] exit")
+            print("="*32)
+
+            option = input("choose one of the options above: ")
+
+            if option == "1":
+                os.system("clear")
+                w.activateProcess()
+            elif option == "2":
+                os.system("clear")
+                w.deactivateService()
+            elif option == "3":
+                os.system("clear")
+                w.serviceRestart()
+            elif option == "4":
+                os.system("clear")
+                w.serviceStatus()
             elif option == "0":
                 os.system("clear")
                 break

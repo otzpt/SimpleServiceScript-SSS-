@@ -19,7 +19,6 @@ while True:
 
     if option == "1":
         while True:
-            os.system("clear")
             # this took like 5 min to make
             # cause idk how to copy
             # paste on neovim
@@ -57,8 +56,6 @@ while True:
 
     elif option == "2":
         while True:
-            os.system("clear")
-
             print("="*32)
             print("SystemD".center(32))
             print("="*32)
@@ -92,8 +89,6 @@ while True:
 
     elif option == "3":
         while True:
-            os.system("clear")
-
             print("="*32)
             print("windows".center(32))
             print("="*32)

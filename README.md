@@ -21,11 +21,16 @@ of services on linux
 
 - **python 3**
 
-## Notice
+## AI usage notice
 
 The Code itself is **written entirely by humans** AI was used as a **tool for learning** and **never** to write code
 the only thing AI did that it had acess to code was to find bugs and list them in `bugs.md`, that is also the reason
-`.claude` is in the .gitignore 
+`.claude` is in the .gitignore
+
+## Notice
+
+For now `SimpleServiceScripts-SSS-` only supports **systemD** and **Runit** (Windows support soon)
+So make sure your Linux distro use either **Runit** or **SystemD**
 
 ## How to use
 
@@ -43,4 +48,3 @@ or
 ```bash
 python main.py
 ```
-### MAKE SURE YOU HAVE A DISTRO THAT USES SYSTEMD OR RUNIT

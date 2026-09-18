@@ -21,6 +21,12 @@ of services on linux
 
 - **python 3**
 
+## Notice
+
+The Code itself is **written entirely by humans** AI was used as a **tool for learning** and **never** to write code
+the only thing AI did that it had acess to code was to find bugs and list them in `bugs.md`, that is also the reason
+`.claude` is in the .gitignore 
+
 ## How to use
 
 First make sure you have python3 installed
